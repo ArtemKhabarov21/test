@@ -6,20 +6,14 @@
     <title>Custom Back Navigation</title>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Сохраняем текущую историю, чтобы кнопка "Назад" реагировала на это состояние
             history.pushState(null, '', location.href);
-
-            // Перехватываем событие popstate (срабатывает при нажатии "Назад")
             window.addEventListener('popstate', function () {
-                // Перенаправляем пользователя на нужный сайт
-                location.href = 'https://example.com'; // Замените на ваш URL
+                location.href = 'https://www.youtube.com/watch?v=Sagg08DrO5U&t=6s&ab_channel=Setanta';
             });
-
-            // Обрабатываем нажатие Backspace, если нет фокуса на поле ввода
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Backspace' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-                    e.preventDefault(); // Блокируем действие по умолчанию
-                    location.href = 'https://example.com'; // Замените на ваш URL
+                    e.preventDefault();
+                    location.href = 'https://example.com';
                 }
             });
         });
